@@ -440,7 +440,12 @@ class WAV {
           d = amplitude * Math.sin(frequency * i) * ((i < fade) ? i : (i > nonZero) ? blocksOut - i + 1 : fade) / fade;
         }
 
+
+        //TODO: This is where it all happens
+
         data[k] = d + (blend ? data[k] : 0);
+
+
       }
     }
 
@@ -457,9 +462,16 @@ class WAV {
           d = amplitude * Math.sin(frequency * i) * ((i < fade) ? i : (i > nonZero) ? blocksOut - i + 1 : fade) / fade;
         }
 
+        //TODO This is where it all happens
+
         data[k + j] = d;
       }
     }
+
+
+
+
+
 
     // update header properties
     var end = Math.max(start + blocksOut * numChannels, stop) * this.BitsPerSample >>> 3;

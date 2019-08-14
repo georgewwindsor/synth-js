@@ -8,6 +8,15 @@ module.exports = function midiToWav(buffer, args = {}) {
   if (args.verbose) {
     console.log('parsing MIDI header...');
   }
+  let instrumentList={};
+  if(args.instrumentList){
+    instrumentList=args.instrumentList
+  }
+
+
+
+
+
 
   const midiStream = new MIDIStream(buffer);
   const header = midiStream.readChunk();
